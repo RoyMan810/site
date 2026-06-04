@@ -267,20 +267,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-footer p { max-width: 420px; margin: 16px 0 0; color: var(--muted); line-height: 1.6; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 16px 24px; color: var(--muted); font-weight: 700; }
 .copyright { white-space: nowrap; font-size: 14px; }
-.pagesmith-badge {
-  position: fixed;
-  right: 16px;
-  bottom: 14px;
-  z-index: 30;
-  padding: 9px 12px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-  color: rgba(255,255,255,.7);
-  background: rgba(0,0,0,.54);
-  backdrop-filter: blur(12px);
-  font-size: 12px;
-}
-
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }

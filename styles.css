@@ -98,7 +98,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 28px rgba(245, 200, 75, 0.3);
 }
 
-section { padding: 108px 0; }
+section { padding: 70px 0; }
 .section-grid { display: grid; grid-template-columns: 1fr 0.9fr; align-items: center; gap: 62px; }
 .hero { min-height: 760px; padding-top: 74px; }
 .status-pill, .eyebrow {
@@ -225,7 +225,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .safe { border-color: rgba(47,246,162,.24); }
 .safe h3 { color: #8dffd2; }
 
-.section-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
+.section-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .feature-grid, .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .feature-card, .step-card, .price-card { padding: 30px; }
 .feature-icon, .step-card span {

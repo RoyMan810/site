@@ -1,0 +1,147 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid transparent;
+  background: rgba(23, 22, 15, 0.55);
+  backdrop-filter: blur(10px);
+  transition: background .3s var(--ease), border-color .3s var(--ease);
+}
+.site-header.is-scrolled {
+  background: rgba(23, 22, 15, 0.92);
+  border-bottom-color: var(--line);
+}
+
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono-display); font-weight: 700; letter-spacing: -0.01em; font-size: 16px; color: var(--text); }
+.brand-mark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.brand:hover .brand-mark { transform: rotate(-8deg) scale(1.08); box-shadow: 0 0 16px rgba(255, 176, 32, .35); }
+
+/* Shared underline-on-hover treatment for header and footer nav links */
+.desktop-nav { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 13px; font-weight: 500; }
+.desktop-nav a, .site-footer nav a {
+  position: relative;
+  padding-bottom: 3px;
+  transition: color .2s ease;
+}
+.desktop-nav a::after, .site-footer nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1.5px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s var(--ease);
+}
+.desktop-nav a:hover, .site-footer nav a:hover { color: var(--amber); }
+.desktop-nav a:hover::after, .site-footer nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.header-cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s ease, color .2s ease;
+}
+.header-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, .5), transparent);
+  transform: skewX(-20deg);
+  transition: left .55s var(--ease);
+  pointer-events: none;
+}
+.header-cta:hover::before { left: 125%; }
+.header-cta:hover { background: var(--amber); color: #12100b; }
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle span {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  transition: transform .3s var(--ease), opacity .2s ease, top .3s var(--ease);
+}
+.nav-toggle span:nth-child(1) { top: 14px; }
+.nav-toggle span:nth-child(2) { top: 19px; }
+.nav-toggle span:nth-child(3) { top: 24px; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { top: 19px; transform: rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-top: none;
+  background: rgba(23, 22, 15, 0.98);
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+.mobile-nav.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 12px;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px dashed var(--line-soft);
+  transition: color .2s ease, background .2s ease;
+}
+.mobile-nav a::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  opacity: .5;
+  transition: transform .2s ease;
+}
+.mobile-nav a:hover { color: var(--amber); background: rgba(255,176,32,.05); }
+.mobile-nav a:hover::after { transform: rotate(-45deg) translate(2px, -2px); }
+.mobile-nav .btn { margin-top: 8px; border-bottom: none; justify-content: center; }
+.mobile-nav .btn::after { content: none; }

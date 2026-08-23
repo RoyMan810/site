@@ -4,19 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="K-VPN — анонимность, свобода и безопасность без ограничений для России." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#17160f" />
     <title>K-VPN — Анонимность. Свобода. Безопасность.</title>
-    <link rel="icon" href="https://i.ibb.co/rKDSp6t0/favicon.png" type="image/png">
+    <link rel="canonical" href="https://k-vpn.online/" />
+
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="256x256" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k-vpn.online/" />
+    <meta property="og:site_name" content="K-VPN" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="K-VPN — Анонимность. Свобода. Безопасность." />
+    <meta property="og:description" content="Абсолютная анонимность, свобода доступа и премиальная скорость. Ваша цифровая броня в мире без границ." />
+    <meta property="og:image" content="https://k-vpn.online/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="K-VPN — VPN без ограничений для России" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="K-VPN — Анонимность. Свобода. Безопасность." />
+    <meta name="twitter:description" content="Абсолютная анонимность, свобода доступа и премиальная скорость. Ваша цифровая броня в мире без границ." />
+    <meta name="twitter:image" content="https://k-vpn.online/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="K-VPN — VPN без ограничений для России" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
     <div class="page-shell">
-      <header class="site-header">
+      <header class="site-header" id="site-header">
         <a href="#hero" class="brand" aria-label="K-VPN на главную">
-          <span class="brand-mark">K</span>
+          <img class="brand-mark" src="assets/logo.png" alt="" width="32" height="32" />
           <span>K-VPN</span>
         </a>
         <nav class="desktop-nav" aria-label="Основная навигация">
@@ -26,69 +54,72 @@
           <a href="#pricing">Тарифы</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a href="https://cabinet.k-vpn.online/" class="header-cta">Подключиться</a>
+        <div class="header-actions">
+          <a href="https://cabinet.k-vpn.online/" class="header-cta">[ Подключиться ]</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
+          <a href="#threat">След</a>
+          <a href="#benefits">Преимущества</a>
+          <a href="#setup">Настройка</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://cabinet.k-vpn.online/" class="btn btn-primary">[ Подключиться за 1 минуту ]</a>
+        </nav>
       </header>
 
       <main>
         <section id="hero" class="hero section-grid">
           <div class="hero-copy reveal">
-            <div class="status-pill"><span></span>Статус: Зашифровано</div>
+            <div class="status-pill">root@k-vpn:~$ status <strong>ENCRYPTED</strong><span class="cursor" aria-hidden="true"></span></div>
             <h1><span>VPN без ограничений</span> для России</h1>
             <p class="lead">Абсолютная анонимность, свобода доступа и премиальная скорость. Ваша цифровая броня в мире без границ.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://cabinet.k-vpn.online/">Подключиться за 1 минуту</a>
-              <a class="btn btn-secondary" href="#benefits">Узнать больше</a>
+              <a class="btn btn-primary" href="https://cabinet.k-vpn.online/">
+                [ Подключиться за 1 минуту ]
+              </a>
+              <a class="btn btn-secondary" href="#benefits">узнать больше →</a>
             </div>
             <div class="metrics" aria-label="Ключевые показатели K-VPN">
-              <div><strong>25 Гбит/с</strong><span>Скорость порта</span></div>
-              <div><strong>2+</strong><span>Локаций</span></div>
-              <div><strong>RAM-only</strong><span>Серверы</span></div>
+              <div><strong>25 Гбит/с</strong><span>скорость порта</span></div>
+              <div><strong>2+</strong><span>локаций</span></div>
+              <div><strong>RAM-only</strong><span>серверы</span></div>
             </div>
           </div>
-          <div class="hero-visual reveal" aria-label="K-VPN Golden Sentinel Mascot" role="img">
-            <div class="orb orb-one"></div>
-            <div class="orb orb-two"></div>
-            <div class="sentinel-card">
-              <div class="shield-glow"></div>
-              <svg class="sentinel" viewBox="0 0 520 560" aria-hidden="true">
-                <defs>
-                  <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stop-color="#fff4b8" />
-                    <stop offset=".42" stop-color="#f6c84d" />
-                    <stop offset="1" stop-color="#c88712" />
-                  </linearGradient>
-                  <linearGradient id="dark" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stop-color="#1d2638" />
-                    <stop offset="1" stop-color="#050811" />
-                  </linearGradient>
-                </defs>
-                <path d="M260 26 453 92v146c0 133-76 242-193 296C143 480 67 371 67 238V92L260 26Z" fill="url(#dark)" stroke="url(#gold)" stroke-width="16" />
-                <path d="M260 70 412 121v115c0 103-58 188-152 235-94-47-152-132-152-235V121L260 70Z" fill="#0a1020" stroke="rgba(255,214,99,.45)" stroke-width="5" />
-                <path d="M168 252c0-68 39-116 92-116s92 48 92 116v42c0 57-41 101-92 101s-92-44-92-101v-42Z" fill="url(#gold)" />
-                <path d="M199 246c0-45 25-77 61-77s61 32 61 77v35c0 39-26 69-61 69s-61-30-61-69v-35Z" fill="#0b1020" />
-                <circle cx="236" cy="254" r="12" fill="#ffe481" />
-                <circle cx="284" cy="254" r="12" fill="#ffe481" />
-                <path d="M225 309c23 14 47 14 70 0" fill="none" stroke="#ffe481" stroke-linecap="round" stroke-width="10" />
-                <path d="M137 202h54v78h-54c-24 0-43-17-43-39s19-39 43-39Zm246 0h-54v78h54c24 0 43-17 43-39s-19-39-43-39Z" fill="url(#gold)" />
-                <path d="M259 113v54" stroke="url(#gold)" stroke-width="14" stroke-linecap="round" />
-                <circle cx="260" cy="106" r="18" fill="url(#gold)" />
-                <path d="M143 399c35 45 73 73 117 95 44-22 82-50 117-95-26 28-65 45-117 45s-91-17-117-45Z" fill="rgba(246,200,77,.18)" />
-              </svg>
-              <div class="terminal-chip chip-one">RAM-only Node Active</div>
-              <div class="terminal-chip chip-two">AES-256</div>
+          <div class="hero-visual reveal" aria-label="Терминал сессии K-VPN" role="img">
+            <div class="term-window">
+              <div class="term-titlebar">
+                <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="term-path">~/k-vpn/session</span>
+                <span class="term-pid">PID 4127</span>
+              </div>
+              <ul class="term-log">
+                <li style="--i:0"><span class="ln-prompt">$</span> resolving nearest node&hellip;</li>
+                <li style="--i:1"><span class="ln-prompt">$</span> handshake <span class="ln-ok">OK</span></li>
+                <li style="--i:2"><span class="ln-prompt">$</span> negotiating cipher <span class="ln-amber">AES-256-GCM</span></li>
+                <li style="--i:3"><span class="ln-prompt">$</span> masking IP <span class="ln-muted">██.██.██.██</span></li>
+                <li style="--i:4"><span class="ln-prompt">$</span> tunnel established <span class="ln-ok">✓</span></li>
+                <li style="--i:5" class="ln-final"><span class="ln-prompt">$</span> status: <span class="ln-amber">ENCRYPTED</span><span class="cursor" aria-hidden="true"></span></li>
+              </ul>
+              <div class="term-badges">
+                <span class="term-badge">[ RAM-ONLY NODE: ACTIVE ]</span>
+                <span class="term-badge is-ok">[ CIPHER: AES-256 ]</span>
+              </div>
             </div>
           </div>
         </section>
 
         <section id="threat" class="threat section-grid reveal">
           <div>
-            <p class="eyebrow">Ваш цифровой след</p>
+            <p class="eyebrow">// ваш цифровой след</p>
             <h2>под угрозой</h2>
             <p class="section-text">Без VPN ваше интернет-соединение — это открытая книга для провайдеров и злоумышленников. Посмотрите на разницу.</p>
           </div>
           <div class="comparison">
             <article class="compare-card danger">
-              <h3>Обычное соединение</h3>
+              <h3>обычное соединение</h3>
               <ul>
                 <li><span>Реальный IP-адрес</span><strong>178.204.XX.XX</strong></li>
                 <li><span>Провайдер</span><strong>Видит все ваши действия</strong></li>
@@ -97,7 +128,7 @@
               </ul>
             </article>
             <article class="compare-card safe">
-              <h3>Защита K-VPN</h3>
+              <h3>защита k-vpn</h3>
               <ul>
                 <li><span>IP-адрес</span><strong>Скрыт за маской</strong></li>
                 <li><span>Трафик</span><strong>Шифруется</strong></li>
@@ -110,23 +141,26 @@
 
         <section id="benefits" class="benefits reveal">
           <div class="section-heading">
-            <p class="eyebrow">Анонимность без</p>
+            <p class="eyebrow">// анонимность без</p>
             <h2>компромиссов</h2>
             <p class="section-text">Мы используем технологии, которые делают блокировку технически невозможной.</p>
           </div>
           <div class="feature-grid">
             <article class="feature-card">
-              <span class="feature-icon">⟡</span>
+              <span class="feature-path">~/protocols.conf</span>
+              <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
               <h3>Протоколы нового поколения</h3>
               <p>Использование самых современных протоколов шифрования и обфускации для стабильного обхода систем глубокой фильтрации трафика (DPI).</p>
             </article>
             <article class="feature-card">
-              <span class="feature-icon">◈</span>
+              <span class="feature-path">~/logs.db</span>
+              <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="7" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg></span>
               <h3>Абсолютный Zero-Logs</h3>
               <p>Наши серверы работают исключительно в RAM. Данные стираются при перезагрузке, вести логи технически невозможно.</p>
             </article>
             <article class="feature-card">
-              <span class="feature-icon">✦</span>
+              <span class="feature-path">~/bandwidth.sh</span>
+              <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
               <h3>Бескомпромиссная скорость</h3>
               <p>Порты до 10 Гбит/с на каждом сервере. Смотрите 4K-стримы и качайте файлы без искусственных лимитов.</p>
             </article>
@@ -135,27 +169,43 @@
 
         <section id="setup" class="setup reveal">
           <div class="section-heading">
-            <p class="eyebrow">Подключение в</p>
+            <p class="eyebrow">// подключение в</p>
             <h2>3 простых шага</h2>
             <p class="section-text">Вам не нужно быть системным администратором. Мы сделали всё максимально просто.</p>
           </div>
           <div class="steps">
-            <article class="step-card"><span>1</span><h3>Получите ключ</h3><p>Выберите тариф и получите уникальный ключ доступа в нашем Telegram-боте. Это ваш пропуск в свободную сеть.</p></article>
-            <article class="step-card"><span>2</span><h3>Скачайте приложение</h3><p>Установите официальный клиент для вашей платформы (iOS, Android, Windows, macOS). Мы поддерживаем все современные устройства.</p></article>
-            <article class="step-card"><span>3</span><h3>Импорт и активация</h3><p>Вставьте полученный ключ в приложение и нажмите кнопку подключения. Готово! Вы находитесь в защищенном туннеле.</p></article>
+            <article class="step-card"><span>STEP_01</span><h3>Получите ключ</h3><p>Выберите тариф и получите уникальный ключ доступа в нашем Telegram-боте. Это ваш пропуск в свободную сеть.</p></article>
+            <article class="step-card"><span>STEP_02</span><h3>Скачайте приложение</h3><p>Установите официальный клиент для вашей платформы (iOS, Android, Windows, macOS). Мы поддерживаем все современные устройства.</p></article>
+            <article class="step-card"><span>STEP_03</span><h3>Импорт и активация</h3><p>Вставьте полученный ключ в приложение и нажмите кнопку подключения. Готово! Вы находитесь в защищенном туннеле.</p></article>
           </div>
         </section>
 
         <section id="pricing" class="pricing reveal">
           <div class="section-heading">
-            <p class="eyebrow">Выберите уровень</p>
+            <p class="eyebrow">// выберите уровень</p>
             <h2>вашей свободы</h2>
             <p class="section-text">Прозрачная оплата любым удобным способом, включая карты РФ и крипту.</p>
           </div>
           <div class="pricing-grid">
-            <article class="price-card"><h3>Air</h3><p class="price">от 199.00 ₽ <span>/ 30 дней</span></p><ul><li>100 ГБ трафика</li><li>3 устройства</li><li>Можно докупить ГБ трафика</li><li>Можно докупить дополнительные устройства</li></ul><a href="https://cabinet.k-vpn.online/" class="btn btn-plan">Купить</a></article>
-            <article class="price-card popular"><div class="popular-label">Популярный выбор</div><h3>Prime</h3><p class="price">от 399.00 ₽ <span>/ 30 дней</span></p><ul><li>300 ГБ трафика</li><li>5 устройств</li><li>Можно докупить ГБ трафика</li><li>Можно докупить дополнительные устройства</li></ul><a href="https://cabinet.k-vpn.online/" class="btn btn-plan">Купить</a></article>
-            <article class="price-card"><h3>Ultra</h3><p class="price">от 599.00 ₽ <span>/ 30 дней</span></p><ul><li>500 ГБ трафика</li><li>10 устройств</li><li>Можно докупить ГБ трафика</li><li>Можно докупить дополнительные устройства</li></ul><a href="https://cabinet.k-vpn.online/" class="btn btn-plan">Купить</a></article>
+            <article class="price-card">
+              <div class="price-head"><span class="price-tier">$ tier air</span></div>
+              <p class="price">от 199.00 ₽ <span>/ 30 дней</span></p>
+              <ul><li>100 ГБ трафика</li><li>3 устройства</li><li>Можно докупить ГБ трафика</li><li>Можно докупить дополнительные устройства</li></ul>
+              <a href="https://cabinet.k-vpn.online/" class="btn btn-plan">[ Купить ]</a>
+            </article>
+            <article class="price-card popular">
+              <div class="popular-label">[ RECOMMENDED ]</div>
+              <div class="price-head"><span class="price-tier">$ tier prime</span></div>
+              <p class="price">от 399.00 ₽ <span>/ 30 дней</span></p>
+              <ul><li>300 ГБ трафика</li><li>5 устройств</li><li>Можно докупить ГБ трафика</li><li>Можно докупить дополнительные устройства</li></ul>
+              <a href="https://cabinet.k-vpn.online/" class="btn btn-plan">[ Купить ]</a>
+            </article>
+            <article class="price-card">
+              <div class="price-head"><span class="price-tier">$ tier ultra</span></div>
+              <p class="price">от 599.00 ₽ <span>/ 30 дней</span></p>
+              <ul><li>500 ГБ трафика</li><li>10 устройств</li><li>Можно докупить ГБ трафика</li><li>Можно докупить дополнительные устройства</li></ul>
+              <a href="https://cabinet.k-vpn.online/" class="btn btn-plan">[ Купить ]</a>
+            </article>
           </div>
         </section>
 
@@ -165,17 +215,17 @@
             <p class="section-text">Все, что вы хотели знать о K-VPN и вашей безопасности.</p>
           </div>
           <div class="faq-list">
-            <details open><summary>Будет ли работать K-VPN при сильных блокировках?</summary><p>Да, сервис может работать даже при жёстких блокировках благодаря современным технологиям маскировки трафика (VLESS Reality, Hysteria 2). Они скрывают VPN-подключение под обычный HTTPS-трафик популярных сервисов, поэтому его сложнее обнаружить и заблокировать.</p></details>
-            <details><summary>Какие способы оплаты доступны?</summary><p>Вы можете оплатить подписку любыми российскими банковскими картами, через СБП, а также полностью анонимно с помощью большинства популярных криптовалют (USDT, BTC, TON).</p></details>
-            <details><summary>На каких устройствах работает сервис?</summary><p>K-VPN совместим со всеми современными платформами: iOS, Android, Android TV, Google TV, Windows, macOS и Linux. Вы также можете настроить сервис на своем роутере, чтобы защитить сразу все домашние устройства через один туннель.</p></details>
-            <details><summary>Вы правда не ведете логи?</summary><p>Это технически исключено. Наши серверы работают в режиме RAM-only: операционная система и софт загружаются прямо в оперативную память. Жестких дисков для хранения логов просто нет, а при любой перезагрузке все временные данные уничтожаются.</p></details>
+            <details open><summary><i></i><span>Будет ли работать K-VPN при сильных блокировках?</span></summary><p>Да, сервис может работать даже при жёстких блокировках благодаря современным технологиям маскировки трафика (VLESS Reality, Hysteria 2). Они скрывают VPN-подключение под обычный HTTPS-трафик популярных сервисов, поэтому его сложнее обнаружить и заблокировать.</p></details>
+            <details><summary><i></i><span>Какие способы оплаты доступны?</span></summary><p>Вы можете оплатить подписку любыми российскими банковскими картами, через СБП, а также полностью анонимно с помощью большинства популярных криптовалют (USDT, BTC, TON).</p></details>
+            <details><summary><i></i><span>На каких устройствах работает сервис?</span></summary><p>K-VPN совместим со всеми современными платформами: iOS, Android, Android TV, Google TV, Windows, macOS и Linux. Вы также можете настроить сервис на своем роутере, чтобы защитить сразу все домашние устройства через один туннель.</p></details>
+            <details><summary><i></i><span>Вы правда не ведете логи?</span></summary><p>Это технически исключено. Наши серверы работают в режиме RAM-only: операционная система и софт загружаются прямо в оперативную память. Жестких дисков для хранения логов просто нет, а при любой перезагрузке все временные данные уничтожаются.</p></details>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
         <div>
-          <a href="#hero" class="brand"><span class="brand-mark">K</span><span>K-VPN</span></a>
+          <a href="#hero" class="brand"><img class="brand-mark" src="assets/logo.png" alt="" width="32" height="32" /><span>K-VPN</span></a>
           <p>Ваш надежный проводник в свободный интернет. Технологии безопасности, которым можно доверять.</p>
         </div>
         <nav aria-label="Навигация в подвале">
@@ -185,9 +235,9 @@
           <a href="#faq">FAQ</a>
           <a href="https://t.me/VPN_kurwa_bot">Поддержка</a>
         </nav>
-        <p class="copyright">© 2026 K-VPN | Stay invisible</p>
+        <p class="copyright">// © 2026 K-VPN | stay invisible</p>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

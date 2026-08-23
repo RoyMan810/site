@@ -1,0 +1,38 @@
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cursor, .reveal, .term-log li, .price-card.popular,
+  .compare-card, .feature-card, .step-card, .price-card, .faq-list details,
+  .brand-mark, .feature-icon, .term-window, .btn, .header-cta {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal, .term-log li,
+  .comparison .compare-card, .feature-grid .feature-card, .steps .step-card,
+  .pricing-grid .price-card, .faq-list details {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .desktop-nav { display: none; }
+  .nav-toggle { display: block; }
+  .site-header { position: sticky; }
+  .mobile-nav { display: flex; }
+  .section-grid, .comparison, .feature-grid, .steps, .pricing-grid, .site-footer { grid-template-columns: 1fr; }
+  .hero { min-height: auto; }
+  .hero-visual { min-height: 420px; }
+  .site-footer { text-align: left; }
+}
+
+@media (max-width: 620px) {
+  .page-shell { width: min(100% - 20px, 1180px); }
+  section { padding: 40px 0; }
+  h1 { font-size: 38px; }
+  .metrics { grid-template-columns: 1fr; }
+  .metrics div { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 14px; }
+  .metrics div:first-child { border-top: none; padding-top: 0; }
+  .comparison { gap: 12px; }
+  .site-footer { margin-bottom: 82px; padding: 22px; }
+  .copyright { white-space: normal; }
+}
